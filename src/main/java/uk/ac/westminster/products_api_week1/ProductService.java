@@ -19,6 +19,10 @@ public class ProductService {
         return products.stream().filter(product -> product.getId().equals(id)).findFirst();
     }
 
+    public void deleteProduct (Long id) {
+        products.removeIf(product -> products.getId().equals(id));
+    }
+
     public Product addProduct(Product product) {
         product.setId(nextId++); //business rule which will use the value, then add one
         products.add(product); //data storage that stores an object into our collection

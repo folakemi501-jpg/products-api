@@ -22,5 +22,4 @@ public class ProductsApiWeek1Application {
 		System.out.println(products.remove(1));
 		System.out.println(products.size());
 	}
-
 }
