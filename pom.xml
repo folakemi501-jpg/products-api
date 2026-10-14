@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>uk.ac.westminster</groupId>
-	<artifactId>products-api_week1</artifactId>
+	<artifactId>products-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

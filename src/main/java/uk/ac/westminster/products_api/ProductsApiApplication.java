@@ -1,4 +1,4 @@
-package uk.ac.westminster.products_api_week1;
+package uk.ac.westminster.products_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import java.util.ArrayList; //this is to tell the code to take the list from thi
 import java.util.List;
 
 @SpringBootApplication
-public class ProductsApiWeek1Application {
+public class ProductsApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductsApiWeek1Application.class, args);
+		SpringApplication.run(ProductsApiApplication.class, args);
 
 		List<Product> products = new ArrayList<>(); //this is like a container to add the elements
 
@@ -19,7 +19,5 @@ public class ProductsApiWeek1Application {
 
 		System.out.println(products.size());
 		System.out.println(products.get(1).getName());
-		System.out.println(products.remove(1));
-		System.out.println(products.size());
 	}
 }
