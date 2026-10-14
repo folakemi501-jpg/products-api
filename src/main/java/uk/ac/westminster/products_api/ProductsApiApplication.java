@@ -19,5 +19,9 @@ public class ProductsApiApplication {
 
 		System.out.println(products.size());
 		System.out.println(products.get(1).getName());
+
+		DigitalProduct ebook = new DigitalProduct(1L, "ebook", 20.99, "download/ld", 50);
+		System.out.println(ebook.getName());
 	}
+
 }
