@@ -19,8 +19,13 @@ public class ProductController {
     }
 
     @GetMapping("/products/{id}")
-    public Product getProductById(@PathVariable Long id) {
+    public Product getProductById (@PathVariable Long id) {
         return productService.getProductById(id).orElse(null);
+    }
+
+    @GetMapping("/products/search")
+    public List<Product> findByName (@RequestParam String name) {
+        return productService.findByName(name);
     }
 
     @PostMapping("/products")
@@ -28,7 +33,7 @@ public class ProductController {
         return productService.addProduct(product);
     }
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping("/products/{id}") //endpoints that map
     public void deleteProduct (@PathVariable Long id) {
         productService.deleteProduct(id);
     }

@@ -19,8 +19,12 @@ public class ProductService {
         return products.stream().filter(product -> product.getId().equals(id)).findFirst();
     }
 
+    public List<Product> findByName(String name) {
+        return products.stream().filter(product -> product.getName().contains(name)).toList();
+    }
+
     public void deleteProduct (Long id) {
-        products.removeIf(product -> products.getId().equals(id));
+        products.removeIf(product -> product.getId().equals(id));
     }
 
     public Product addProduct(Product product) {
