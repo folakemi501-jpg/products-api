@@ -1,6 +1,7 @@
 package uk.ac.westminster.products_api;
 
-public class Product {
+public abstract class Product {
+
     private Long id;
     private String name;
     private double price;
@@ -12,6 +13,8 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+
+    public abstract String getSummary();
 
     public Long getId() { return id; } //these are methods that return the specific attributes from the fields
     public String getName() { return name; } //we use these for  jackson to find something to call for the JSON

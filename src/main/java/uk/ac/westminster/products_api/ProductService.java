@@ -8,16 +8,23 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    private List<Product> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>(); //the products allow to add all the children class
     private Long nextId = 1L; //remembers which id to hand out next
 
-    public ProductService() {
-        products.add(new DigitalProduct(nextId++, "clean code(e-book)", 29.99,"/download/clean-code/",4.2));
+    public ProductService() { //this means it gets digital and physical products saved in a list of product
+        products.add(new DigitalProduct(nextId++, "clean code(E-book)", 29.99,"/download/clean-code/",4.2));
         products.add(new PhysicalProduct(nextId++,"27-inch Monitor", 249.99, 5.4, "61cm x 41cm x 18cm" ));
     }
 
     public List<Product> getAllProducts() {
         return products;
+    }
+
+    public List<String> getAllSummaries() {
+        List<String> summaries = new ArrayList<>();
+        for (Product product : products) {
+            summaries.add(product.getSummary()); }
+        return summaries;
     }
 
     public Optional<Product> getProductById(Long id) {
